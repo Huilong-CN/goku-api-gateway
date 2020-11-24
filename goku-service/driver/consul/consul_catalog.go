@@ -173,7 +173,7 @@ func (d *Discovery) execCallbacks(services map[string][]string, catalogServices 
 		hosts := make([]*common.Instance, size)
 		for i, instance := range catalogInstances {
 			//h.hostChangedCallback(appName, newHostInstanceByEureka(appName, &instance))
-			hosts[i] = d.instanceFactory.General(instance.Node.Address, instance.Service.Port, 1)
+			hosts[i] = d.instanceFactory.General(instance.Service.Address, instance.Service.Port, 1)
 
 		}
 
